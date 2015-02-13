@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "GTMOAuth2Authentication.h"
+#import "GTMOAuth2ViewControllerTouch.h"
+
+
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+#define GoogleClientID @"888201765523-3ckdo6hmd8qc6n4am6n99j9029l9iro1.apps.googleusercontent.com"
+#define GoogleClientSecret @"wSSy7QnRUxATk8SQSt26sAUH"
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

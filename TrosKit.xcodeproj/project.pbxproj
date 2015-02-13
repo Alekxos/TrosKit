@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0E60AF1A89EEE7004807EE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E60AE1A89EEE7004807EE /* PostViewController.m */; };
+		9D97660D1A89D44900F9AA8A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9DBE4BFC1A81AACD00F6E110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4BFB1A81AACD00F6E110 /* main.m */; };
 		9DBE4BFF1A81AACD00F6E110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4BFE1A81AACD00F6E110 /* AppDelegate.m */; };
 		9DBE4C021A81AACD00F6E110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C011A81AACD00F6E110 /* ViewController.m */; };
@@ -14,6 +16,16 @@
 		9DBE4C071A81AACD00F6E110 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C061A81AACD00F6E110 /* Images.xcassets */; };
 		9DBE4C0A1A81AACD00F6E110 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C081A81AACD00F6E110 /* LaunchScreen.xib */; };
 		9DBE4C161A81AACD00F6E110 /* TrosKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C151A81AACD00F6E110 /* TrosKitTests.m */; };
+		9DBE4C221A81AB0B00F6E110 /* Facebook Sign-In Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C201A81AB0B00F6E110 /* Facebook Sign-In Button.png */; };
+		9DBE4C231A81AB0B00F6E110 /* Google Sign-In Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C211A81AB0B00F6E110 /* Google Sign-In Button.png */; };
+		9DBE4C271A81AC5200F6E110 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C261A81AC5200F6E110 /* AuthenticationViewController.m */; };
+		9DBE4C321A81AEC600F6E110 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C2A1A81AEC600F6E110 /* GTMHTTPFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9DBE4C331A81AEC600F6E110 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C2C1A81AEC600F6E110 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9DBE4C341A81AEC600F6E110 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C2E1A81AEC600F6E110 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9DBE4C351A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C301A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9DBE4C361A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C311A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib */; };
+		9DBE4C381A81AEF600F6E110 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE4C371A81AEF600F6E110 /* Security.framework */; };
+		9DBE4C3A1A81AF0000F6E110 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE4C391A81AF0000F6E110 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D0E60AD1A89EEE7004807EE /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		9D0E60AE1A89EEE7004807EE /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		9D97660B1A89D44900F9AA8A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		9DBE4BF61A81AACD00F6E110 /* TrosKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrosKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBE4BFA1A81AACD00F6E110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DBE4BFB1A81AACD00F6E110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +56,21 @@
 		9DBE4C0F1A81AACD00F6E110 /* TrosKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrosKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBE4C141A81AACD00F6E110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DBE4C151A81AACD00F6E110 /* TrosKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrosKitTests.m; sourceTree = "<group>"; };
+		9DBE4C201A81AB0B00F6E110 /* Facebook Sign-In Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook Sign-In Button.png"; sourceTree = "<group>"; };
+		9DBE4C211A81AB0B00F6E110 /* Google Sign-In Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google Sign-In Button.png"; sourceTree = "<group>"; };
+		9DBE4C251A81AC5200F6E110 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		9DBE4C261A81AC5200F6E110 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		9DBE4C291A81AEC600F6E110 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		9DBE4C2A1A81AEC600F6E110 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		9DBE4C2B1A81AEC600F6E110 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
+		9DBE4C2C1A81AEC600F6E110 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
+		9DBE4C2D1A81AEC600F6E110 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
+		9DBE4C2E1A81AEC600F6E110 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
+		9DBE4C2F1A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		9DBE4C301A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		9DBE4C311A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		9DBE4C371A81AEF600F6E110 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9DBE4C391A81AF0000F6E110 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBE4C3A1A81AF0000F6E110 /* SystemConfiguration.framework in Frameworks */,
+				9DBE4C381A81AEF600F6E110 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +93,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D97660A1A89D43900F9AA8A /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				9D97660B1A89D44900F9AA8A /* KeychainItemWrapper.h */,
+				9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		9DBE4BED1A81AACD00F6E110 = {
 			isa = PBXGroup;
 			children = (
+				9DBE4C391A81AF0000F6E110 /* SystemConfiguration.framework */,
+				9DBE4C371A81AEF600F6E110 /* Security.framework */,
 				9DBE4BF81A81AACD00F6E110 /* TrosKit */,
 				9DBE4C121A81AACD00F6E110 /* TrosKitTests */,
 				9DBE4BF71A81AACD00F6E110 /* Products */,
@@ -81,13 +125,15 @@
 		9DBE4BF81A81AACD00F6E110 /* TrosKit */ = {
 			isa = PBXGroup;
 			children = (
+				9D97660A1A89D43900F9AA8A /* Keychain */,
+				9DBE4C281A81AEA700F6E110 /* GTM OAuth2 */,
+				9DBE4C241A81AC3D00F6E110 /* ViewControllers */,
 				9DBE4BFD1A81AACD00F6E110 /* AppDelegate.h */,
 				9DBE4BFE1A81AACD00F6E110 /* AppDelegate.m */,
-				9DBE4C001A81AACD00F6E110 /* ViewController.h */,
-				9DBE4C011A81AACD00F6E110 /* ViewController.m */,
 				9DBE4C031A81AACD00F6E110 /* Main.storyboard */,
 				9DBE4C061A81AACD00F6E110 /* Images.xcassets */,
 				9DBE4C081A81AACD00F6E110 /* LaunchScreen.xib */,
+				9DBE4C1F1A81AAFD00F6E110 /* Images */,
 				9DBE4BF91A81AACD00F6E110 /* Supporting Files */,
 			);
 			path = TrosKit;
@@ -117,6 +163,44 @@
 				9DBE4C141A81AACD00F6E110 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DBE4C1F1A81AAFD00F6E110 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE4C201A81AB0B00F6E110 /* Facebook Sign-In Button.png */,
+				9DBE4C211A81AB0B00F6E110 /* Google Sign-In Button.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		9DBE4C241A81AC3D00F6E110 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE4C001A81AACD00F6E110 /* ViewController.h */,
+				9DBE4C011A81AACD00F6E110 /* ViewController.m */,
+				9DBE4C251A81AC5200F6E110 /* AuthenticationViewController.h */,
+				9DBE4C261A81AC5200F6E110 /* AuthenticationViewController.m */,
+				9D0E60AD1A89EEE7004807EE /* PostViewController.h */,
+				9D0E60AE1A89EEE7004807EE /* PostViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9DBE4C281A81AEA700F6E110 /* GTM OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE4C291A81AEC600F6E110 /* GTMHTTPFetcher.h */,
+				9DBE4C2A1A81AEC600F6E110 /* GTMHTTPFetcher.m */,
+				9DBE4C2B1A81AEC600F6E110 /* GTMOAuth2Authentication.h */,
+				9DBE4C2C1A81AEC600F6E110 /* GTMOAuth2Authentication.m */,
+				9DBE4C2D1A81AEC600F6E110 /* GTMOAuth2SignIn.h */,
+				9DBE4C2E1A81AEC600F6E110 /* GTMOAuth2SignIn.m */,
+				9DBE4C2F1A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.h */,
+				9DBE4C301A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m */,
+				9DBE4C311A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = "GTM OAuth2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +283,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBE4C361A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib in Resources */,
 				9DBE4C051A81AACD00F6E110 /* Main.storyboard in Resources */,
+				9DBE4C221A81AB0B00F6E110 /* Facebook Sign-In Button.png in Resources */,
+				9DBE4C231A81AB0B00F6E110 /* Google Sign-In Button.png in Resources */,
 				9DBE4C0A1A81AACD00F6E110 /* LaunchScreen.xib in Resources */,
 				9DBE4C071A81AACD00F6E110 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBE4C341A81AEC600F6E110 /* GTMOAuth2SignIn.m in Sources */,
+				9DBE4C271A81AC5200F6E110 /* AuthenticationViewController.m in Sources */,
 				9DBE4C021A81AACD00F6E110 /* ViewController.m in Sources */,
 				9DBE4BFF1A81AACD00F6E110 /* AppDelegate.m in Sources */,
+				9D0E60AF1A89EEE7004807EE /* PostViewController.m in Sources */,
+				9DBE4C331A81AEC600F6E110 /* GTMOAuth2Authentication.m in Sources */,
 				9DBE4BFC1A81AACD00F6E110 /* main.m in Sources */,
+				9DBE4C351A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m in Sources */,
+				9DBE4C321A81AEC600F6E110 /* GTMHTTPFetcher.m in Sources */,
+				9D97660D1A89D44900F9AA8A /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +506,7 @@
 				9DBE4C1B1A81AACD00F6E110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DBE4C1C1A81AACD00F6E110 /* Build configuration list for PBXNativeTarget "TrosKitTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +515,7 @@
 				9DBE4C1E1A81AACD00F6E110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
