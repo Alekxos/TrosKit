@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)post:(UIButton *)sender;
+- (IBAction)drive:(UIButton *)sender;
 
 
 @end

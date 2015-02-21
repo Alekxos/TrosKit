@@ -1,43 +1,36 @@
 //
-//  PostViewController.m
+//  DriveViewController.m
 //  TrosKit
 //
-//  Created by Alex Boulton on 2/9/15.
+//  Created by Alex Boulton on 2/20/15.
 //  Copyright (c) 2015 Alex Boulton. All rights reserved.
 //
 
-#import "PostViewController.h"
+#import "DriveViewController.h"
 #import "User.h"
 #import "PostList.h"
+#import "Post.h"
 
-@interface PostViewController ()
+@interface DriveViewController ()
 
 @end
 
-
-@implementation PostViewController
+@implementation DriveViewController
 
 @synthesize nameLabel;
-@synthesize postTableView;
+@synthesize driveTableView;
 
-NSMutableArray *userPosts;
+NSMutableArray *allPosts;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *encodedObject=[defaults valueForKey:@"current user"];
+    NSData *encodedPosts=[defaults valueForKey:@"postlist"];
     User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-
+    allPosts=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPosts];
+    
     nameLabel.text=[NSString stringWithFormat:@"Welcome, %@ %@",currentUser.firstName,currentUser.lastName];
-    
-    NSData *encodedPostList = [defaults objectForKey:@"postlist"];
-    PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
-    
-    userPosts=[postlist postsForUser:currentUser];
-    /*[base addUser:newUser];
-    NSData *encodedUserBase2 = [NSKeyedArchiver archivedDataWithRootObject:base];
-    [defaults setObject:encodedUserBase2 forKey:@"cache"];
-    [defaults synchronize];*/
     // Do any additional setup after loading the view.
 }
 
@@ -54,8 +47,8 @@ NSMutableArray *userPosts;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
-    cell.textLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).name;
-    cell.detailTextLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).description;
+    cell.textLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).name;
+    cell.detailTextLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).description;
     
     // set the accessory view:
     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
@@ -63,15 +56,15 @@ NSMutableArray *userPosts;
 }
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
-    return userPosts.count;
+    return allPosts.count;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    Post *selected=[userPosts objectAtIndex:row];
-    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:selected] forKey:@"selectedPost"];
-    [self performSegueWithIdentifier:@"PostToBidListSegue" sender:self];
+    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }
 
 /*

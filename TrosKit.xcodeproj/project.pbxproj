@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9D0E60AF1A89EEE7004807EE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E60AE1A89EEE7004807EE /* PostViewController.m */; };
+		9D43185D1A98040B001E9FCA /* DriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D43185C1A98040B001E9FCA /* DriveViewController.m */; };
+		9D4318601A9806DE001E9FCA /* Bid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D43185F1A9806DE001E9FCA /* Bid.m */; };
+		9D4318661A980B9B001E9FCA /* BiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4318651A980B9B001E9FCA /* BiddingViewController.m */; };
+		9D4318691A98141C001E9FCA /* BidListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4318681A98141C001E9FCA /* BidListViewController.m */; };
+		9D43186C1A98146A001E9FCA /* SelectBidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D43186B1A98146A001E9FCA /* SelectBidViewController.m */; };
 		9D97660D1A89D44900F9AA8A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9DA79FC51A8EBD470060E5D7 /* EmailAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA79FC41A8EBD470060E5D7 /* EmailAuthenticationViewController.m */; };
+		9DA79FD01A8ECDE00060E5D7 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA79FCF1A8ECDE00060E5D7 /* UserBase.m */; };
+		9DA79FD31A8ECE220060E5D7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA79FD21A8ECE220060E5D7 /* User.m */; };
 		9DBE4BFC1A81AACD00F6E110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4BFB1A81AACD00F6E110 /* main.m */; };
 		9DBE4BFF1A81AACD00F6E110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4BFE1A81AACD00F6E110 /* AppDelegate.m */; };
 		9DBE4C021A81AACD00F6E110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE4C011A81AACD00F6E110 /* ViewController.m */; };
@@ -26,6 +34,9 @@
 		9DBE4C361A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE4C311A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib */; };
 		9DBE4C381A81AEF600F6E110 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE4C371A81AEF600F6E110 /* Security.framework */; };
 		9DBE4C3A1A81AF0000F6E110 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE4C391A81AF0000F6E110 /* SystemConfiguration.framework */; };
+		9DF1E27A1A93117E007E6AD8 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1E2791A93117E007E6AD8 /* Post.m */; };
+		9DF1E27D1A93118D007E6AD8 /* PostList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1E27C1A93118D007E6AD8 /* PostList.m */; };
+		9DF1E2801A931574007E6AD8 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1E27F1A931574007E6AD8 /* PostingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +52,24 @@
 /* Begin PBXFileReference section */
 		9D0E60AD1A89EEE7004807EE /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		9D0E60AE1A89EEE7004807EE /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		9D43185B1A98040B001E9FCA /* DriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveViewController.h; sourceTree = "<group>"; };
+		9D43185C1A98040B001E9FCA /* DriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveViewController.m; sourceTree = "<group>"; };
+		9D43185E1A9806DE001E9FCA /* Bid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bid.h; sourceTree = "<group>"; };
+		9D43185F1A9806DE001E9FCA /* Bid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bid.m; sourceTree = "<group>"; };
+		9D4318641A980B9B001E9FCA /* BiddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiddingViewController.h; sourceTree = "<group>"; };
+		9D4318651A980B9B001E9FCA /* BiddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiddingViewController.m; sourceTree = "<group>"; };
+		9D4318671A98141C001E9FCA /* BidListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidListViewController.h; sourceTree = "<group>"; };
+		9D4318681A98141C001E9FCA /* BidListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidListViewController.m; sourceTree = "<group>"; };
+		9D43186A1A98146A001E9FCA /* SelectBidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBidViewController.h; sourceTree = "<group>"; };
+		9D43186B1A98146A001E9FCA /* SelectBidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBidViewController.m; sourceTree = "<group>"; };
 		9D97660B1A89D44900F9AA8A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		9DA79FC31A8EBD470060E5D7 /* EmailAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailAuthenticationViewController.h; sourceTree = "<group>"; };
+		9DA79FC41A8EBD470060E5D7 /* EmailAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailAuthenticationViewController.m; sourceTree = "<group>"; };
+		9DA79FCE1A8ECDE00060E5D7 /* UserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBase.h; sourceTree = "<group>"; };
+		9DA79FCF1A8ECDE00060E5D7 /* UserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBase.m; sourceTree = "<group>"; };
+		9DA79FD11A8ECE220060E5D7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9DA79FD21A8ECE220060E5D7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9DBE4BF61A81AACD00F6E110 /* TrosKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrosKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBE4BFA1A81AACD00F6E110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DBE4BFB1A81AACD00F6E110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +98,12 @@
 		9DBE4C311A81AEC600F6E110 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
 		9DBE4C371A81AEF600F6E110 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9DBE4C391A81AF0000F6E110 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9DF1E2781A93117E007E6AD8 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		9DF1E2791A93117E007E6AD8 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		9DF1E27B1A93118D007E6AD8 /* PostList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostList.h; sourceTree = "<group>"; };
+		9DF1E27C1A93118D007E6AD8 /* PostList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostList.m; sourceTree = "<group>"; };
+		9DF1E27E1A931574007E6AD8 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
+		9DF1E27F1A931574007E6AD8 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +135,23 @@
 			name = Keychain;
 			sourceTree = "<group>";
 		};
+		9DA79FC61A8EC43E0060E5D7 /* Data (temporary) */ = {
+			isa = PBXGroup;
+			children = (
+				9DA79FCE1A8ECDE00060E5D7 /* UserBase.h */,
+				9DA79FCF1A8ECDE00060E5D7 /* UserBase.m */,
+				9DA79FD11A8ECE220060E5D7 /* User.h */,
+				9DA79FD21A8ECE220060E5D7 /* User.m */,
+				9DF1E2781A93117E007E6AD8 /* Post.h */,
+				9DF1E2791A93117E007E6AD8 /* Post.m */,
+				9DF1E27B1A93118D007E6AD8 /* PostList.h */,
+				9DF1E27C1A93118D007E6AD8 /* PostList.m */,
+				9D43185E1A9806DE001E9FCA /* Bid.h */,
+				9D43185F1A9806DE001E9FCA /* Bid.m */,
+			);
+			name = "Data (temporary)";
+			sourceTree = "<group>";
+		};
 		9DBE4BED1A81AACD00F6E110 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +175,7 @@
 		9DBE4BF81A81AACD00F6E110 /* TrosKit */ = {
 			isa = PBXGroup;
 			children = (
+				9DA79FC61A8EC43E0060E5D7 /* Data (temporary) */,
 				9D97660A1A89D43900F9AA8A /* Keychain */,
 				9DBE4C281A81AEA700F6E110 /* GTM OAuth2 */,
 				9DBE4C241A81AC3D00F6E110 /* ViewControllers */,
@@ -183,6 +234,18 @@
 				9DBE4C261A81AC5200F6E110 /* AuthenticationViewController.m */,
 				9D0E60AD1A89EEE7004807EE /* PostViewController.h */,
 				9D0E60AE1A89EEE7004807EE /* PostViewController.m */,
+				9DA79FC31A8EBD470060E5D7 /* EmailAuthenticationViewController.h */,
+				9DA79FC41A8EBD470060E5D7 /* EmailAuthenticationViewController.m */,
+				9DF1E27E1A931574007E6AD8 /* PostingViewController.h */,
+				9DF1E27F1A931574007E6AD8 /* PostingViewController.m */,
+				9D43185B1A98040B001E9FCA /* DriveViewController.h */,
+				9D43185C1A98040B001E9FCA /* DriveViewController.m */,
+				9D4318641A980B9B001E9FCA /* BiddingViewController.h */,
+				9D4318651A980B9B001E9FCA /* BiddingViewController.m */,
+				9D4318671A98141C001E9FCA /* BidListViewController.h */,
+				9D4318681A98141C001E9FCA /* BidListViewController.m */,
+				9D43186A1A98146A001E9FCA /* SelectBidViewController.h */,
+				9D43186B1A98146A001E9FCA /* SelectBidViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -306,16 +369,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA79FD31A8ECE220060E5D7 /* User.m in Sources */,
 				9DBE4C341A81AEC600F6E110 /* GTMOAuth2SignIn.m in Sources */,
+				9DA79FD01A8ECDE00060E5D7 /* UserBase.m in Sources */,
 				9DBE4C271A81AC5200F6E110 /* AuthenticationViewController.m in Sources */,
+				9D43185D1A98040B001E9FCA /* DriveViewController.m in Sources */,
 				9DBE4C021A81AACD00F6E110 /* ViewController.m in Sources */,
+				9DF1E2801A931574007E6AD8 /* PostingViewController.m in Sources */,
 				9DBE4BFF1A81AACD00F6E110 /* AppDelegate.m in Sources */,
 				9D0E60AF1A89EEE7004807EE /* PostViewController.m in Sources */,
 				9DBE4C331A81AEC600F6E110 /* GTMOAuth2Authentication.m in Sources */,
+				9D43186C1A98146A001E9FCA /* SelectBidViewController.m in Sources */,
 				9DBE4BFC1A81AACD00F6E110 /* main.m in Sources */,
+				9DF1E27D1A93118D007E6AD8 /* PostList.m in Sources */,
 				9DBE4C351A81AEC600F6E110 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				9DBE4C321A81AEC600F6E110 /* GTMHTTPFetcher.m in Sources */,
+				9D4318661A980B9B001E9FCA /* BiddingViewController.m in Sources */,
 				9D97660D1A89D44900F9AA8A /* KeychainItemWrapper.m in Sources */,
+				9D4318691A98141C001E9FCA /* BidListViewController.m in Sources */,
+				9D4318601A9806DE001E9FCA /* Bid.m in Sources */,
+				9DA79FC51A8EBD470060E5D7 /* EmailAuthenticationViewController.m in Sources */,
+				9DF1E27A1A93117E007E6AD8 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

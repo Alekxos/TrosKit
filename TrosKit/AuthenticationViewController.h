@@ -13,4 +13,6 @@
 - (IBAction)googleAuthentication:(UIButton *)sender;
 - (IBAction)emailAuthentication:(UIButton *)sender;
 
+@property(strong,nonatomic) NSMutableData *responseData;
+
 @end

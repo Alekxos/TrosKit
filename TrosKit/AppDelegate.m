@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"
+#import "UserBase.h"
+#import "PostList.h"
 
 
 
@@ -24,6 +26,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    if([defaults objectForKey:@"cache"]==NULL){
+        UserBase *users=[[UserBase alloc]init];
+        NSData *encodedUserBase = [NSKeyedArchiver archivedDataWithRootObject:users];
+        [defaults setObject:encodedUserBase forKey:@"cache"];
+    }
+    if([defaults objectForKey:@"postlist"]==NULL){
+        PostList *postlist=[[PostList alloc]init];
+        NSData *encodedPostList = [NSKeyedArchiver archivedDataWithRootObject:postlist];
+        [defaults setObject:encodedPostList forKey:@"postlist"];
+    }
     return YES;
 }
 

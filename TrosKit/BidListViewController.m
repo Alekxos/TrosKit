@@ -1,43 +1,24 @@
 //
-//  PostViewController.m
+//  BidListViewController.m
 //  TrosKit
 //
-//  Created by Alex Boulton on 2/9/15.
+//  Created by Alex Boulton on 2/20/15.
 //  Copyright (c) 2015 Alex Boulton. All rights reserved.
 //
 
-#import "PostViewController.h"
-#import "User.h"
-#import "PostList.h"
+#import "BidListViewController.h"
+#import "Bid.h"
 
-@interface PostViewController ()
+@interface BidListViewController ()
 
 @end
 
+@implementation BidListViewController
 
-@implementation PostViewController
-
-@synthesize nameLabel;
-@synthesize postTableView;
-
-NSMutableArray *userPosts;
+NSMutableArray *bids;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    NSData *encodedObject=[defaults valueForKey:@"current user"];
-    User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-
-    nameLabel.text=[NSString stringWithFormat:@"Welcome, %@ %@",currentUser.firstName,currentUser.lastName];
-    
-    NSData *encodedPostList = [defaults objectForKey:@"postlist"];
-    PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
-    
-    userPosts=[postlist postsForUser:currentUser];
-    /*[base addUser:newUser];
-    NSData *encodedUserBase2 = [NSKeyedArchiver archivedDataWithRootObject:base];
-    [defaults setObject:encodedUserBase2 forKey:@"cache"];
-    [defaults synchronize];*/
     // Do any additional setup after loading the view.
 }
 
@@ -45,6 +26,7 @@ NSMutableArray *userPosts;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -54,8 +36,13 @@ NSMutableArray *userPosts;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
-    cell.textLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).name;
-    cell.detailTextLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).description;
+    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *encodedPost=[defaults objectForKey:@"selectedPost"];
+    Post *selected=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPost];
+    bids=selected.bids;
+    cell.textLabel.text = [NSString stringWithFormat:@"%F",((Bid *)[bids objectAtIndex:indexPath.row]).amount];
+    cell.detailTextLabel.text = ((Bid *)[bids objectAtIndex:indexPath.row]).bidder.firstName;
     
     // set the accessory view:
     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
@@ -63,15 +50,15 @@ NSMutableArray *userPosts;
 }
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
-    return userPosts.count;
+    return bids.count;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    Post *selected=[userPosts objectAtIndex:row];
-    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:selected] forKey:@"selectedPost"];
-    [self performSegueWithIdentifier:@"PostToBidListSegue" sender:self];
+    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }
 
 /*

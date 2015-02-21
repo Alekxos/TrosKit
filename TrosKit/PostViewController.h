@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostViewController : UIViewController
+@interface PostViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (strong, nonatomic) IBOutlet UITableView *postTableView;
 
 @end
