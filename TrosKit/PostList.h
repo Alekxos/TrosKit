@@ -17,4 +17,7 @@
 -(void)addPost:(Post *)post;
 -(void)updatePost:(Post *)post;
 
+- (void)encodeWithCoder:(NSCoder *)encoder;
+- (id)initWithCoder:(NSCoder *)decoder;
+
 @end

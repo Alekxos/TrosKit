@@ -38,6 +38,14 @@ NSString * redirectURI;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    if([[defaults objectForKey:@"post" ] isEqualToString:@"true"]){
+        [self performSegueWithIdentifier:@"AuthToPostSegue" sender:self];
+    }
+    else if([[defaults objectForKey:@"drive" ] isEqualToString:@"true"]){
+        [self performSegueWithIdentifier:@"AuthenticationToDriveSegue" sender:self];
+    }
+    
     GTMOAuth2Authentication *auth;
     auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:keychainItemNameGoogle
                                                                  clientID:GoogleClientID

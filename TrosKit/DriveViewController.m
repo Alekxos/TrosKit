@@ -26,11 +26,17 @@ NSMutableArray *allPosts;
     [super viewDidLoad];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *encodedObject=[defaults valueForKey:@"current user"];
-    NSData *encodedPosts=[defaults valueForKey:@"postlist"];
-    User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    allPosts=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPosts];
+    NSData *encodedPosts=[defaults objectForKey:@"postlist"];
     
-    nameLabel.text=[NSString stringWithFormat:@"Welcome, %@ %@",currentUser.firstName,currentUser.lastName];
+    User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    PostList *postList=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPosts];
+    allPosts=postList.postList;
+    
+    nameLabel.text=[NSString stringWithFormat:@"Welcome, %@",currentUser.firstName];
+    
+    for(Post *p in allPosts){
+        NSLog(@"post name: %@",p.name);
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -47,6 +53,8 @@ NSMutableArray *allPosts;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
+    //cell.textLabel.text=@"Title";
+    //cell.detailTextLabel.text=@"details";
     cell.textLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).name;
     cell.detailTextLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).description;
     
@@ -63,7 +71,11 @@ NSMutableArray *allPosts;
 {
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    NSLog(@"row: %ld",(long)row);
+    [defaults setValue:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    [defaults synchronize];
+    int bn=(int)[defaults valueForKey:@"bidNumber"];
+    NSLog(@"BN???? %i",bn);
     [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }
 

@@ -58,6 +58,7 @@
     newPost.description=descriptionTextView.text;
     
     [postlist addPost:newPost];
+    
     NSData *encoded=[NSKeyedArchiver archivedDataWithRootObject:postlist];
     [defaults setObject:encoded forKey:@"postlist"];
     [defaults synchronize];

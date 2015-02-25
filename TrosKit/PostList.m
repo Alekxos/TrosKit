@@ -22,12 +22,13 @@
 }
 
 -(NSMutableArray *)postsForUser:(User *)user{
-    NSMutableArray *returnArray;
+    NSMutableArray *returnArray=[[NSMutableArray alloc]init];
     for(Post *p in postList){
         if([p.poster.emailAddress isEqualToString:user.emailAddress]){
             [returnArray addObject:p];
         }
     }
+    
     return returnArray;
 }
 
@@ -39,5 +40,19 @@
         }
     }
 }
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.postList forKey:@"postList"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.postList = [decoder decodeObjectForKey:@"postList"];
+    }
+    return self;
+}
+
 
 @end

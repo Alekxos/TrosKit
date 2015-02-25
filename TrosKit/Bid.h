@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+@class User;
+
 @interface Bid : NSObject
 
 @property float amount;
 @property(strong,nonatomic) User *bidder;
 
+- (void)encodeWithCoder:(NSCoder *)encoder;
+- (id)initWithCoder:(NSCoder *)decoder;
 
 @end

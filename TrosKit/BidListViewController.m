@@ -8,6 +8,7 @@
 
 #import "BidListViewController.h"
 #import "Bid.h"
+#import "Post.h"
 
 @interface BidListViewController ()
 
@@ -15,10 +16,35 @@
 
 @implementation BidListViewController
 
+@synthesize selectedShipmentName;
+@synthesize startAddressLabel;
+@synthesize endAddressLabel;
+@synthesize latestDeliveryLabel;
+@synthesize descriptionTextView;
+
+
 NSMutableArray *bids;
+Post *selectedPost;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *encodedPost=[defaults objectForKey:@"selectedPost"];
+    selectedPost=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPost];
+    selectedShipmentName.text=selectedPost.name;
+    startAddressLabel.text=selectedPost.startAddress;
+    endAddressLabel.text=selectedPost.endAddress;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd:"];
+    
+    //Optionally for time zone conversions
+    //[formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
+    
+    NSString *stringFromDate = [formatter stringFromDate:selectedPost.latestDelivery];
+    latestDeliveryLabel.text=stringFromDate;
+    
+    descriptionTextView.text=selectedPost.description;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -36,12 +62,8 @@ NSMutableArray *bids;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
-    
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    NSData *encodedPost=[defaults objectForKey:@"selectedPost"];
-    Post *selected=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPost];
-    bids=selected.bids;
-    cell.textLabel.text = [NSString stringWithFormat:@"%F",((Bid *)[bids objectAtIndex:indexPath.row]).amount];
+    bids=selectedPost.bids;
+    cell.textLabel.text = [NSString stringWithFormat:@"%f",((Bid *)[bids objectAtIndex:indexPath.row]).amount];
     cell.detailTextLabel.text = ((Bid *)[bids objectAtIndex:indexPath.row]).bidder.firstName;
     
     // set the accessory view:
@@ -57,7 +79,9 @@ NSMutableArray *bids;
 {
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    NSLog(@"row: %ld",(long)row);
+    [defaults setObject:[NSNumber numberWithLong:0] forKey:@"bidNumber"];
+    [defaults synchronize];
     [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }
 

@@ -13,4 +13,18 @@
 @synthesize amount;
 @synthesize bidder;
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.bidder forKey:@"bidder"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.bidder = [decoder decodeObjectForKey:@"bidder"];
+    }
+    return self;
+}
+
+
 @end

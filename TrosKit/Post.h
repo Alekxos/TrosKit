@@ -10,6 +10,8 @@
 #import "Bid.h"
 
 @class User;
+@class Bid;
+
 @interface Post : NSObject
 
 @property(strong,nonatomic) User* poster;
@@ -19,7 +21,11 @@
 @property(strong,nonatomic) NSString *description;
 @property(strong,nonatomic) NSString *name;
 @property(strong,nonatomic) NSMutableArray *bids;
+@property float finalPrice;
 
 -(void)addBid:(Bid *)bid;
+
+- (void)encodeWithCoder:(NSCoder *)encoder;
+- (id)initWithCoder:(NSCoder *)decoder;
 
 @end

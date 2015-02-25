@@ -28,7 +28,7 @@ NSMutableArray *userPosts;
     NSData *encodedObject=[defaults valueForKey:@"current user"];
     User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
 
-    nameLabel.text=[NSString stringWithFormat:@"Welcome, %@ %@",currentUser.firstName,currentUser.lastName];
+    nameLabel.text=[NSString stringWithFormat:@"Welcome, %@",currentUser.firstName];
     
     NSData *encodedPostList = [defaults objectForKey:@"postlist"];
     PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
@@ -54,6 +54,8 @@ NSMutableArray *userPosts;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
+    NSLog(@"Row: %li",(long)indexPath.row);
+    NSLog(@"Post at row %li: %@",(long)indexPath.row,((Post *)[userPosts objectAtIndex:indexPath.row]).name);
     cell.textLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).name;
     cell.detailTextLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).description;
     
@@ -71,6 +73,7 @@ NSMutableArray *userPosts;
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     Post *selected=[userPosts objectAtIndex:row];
     [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:selected] forKey:@"selectedPost"];
+    [defaults synchronize];
     [self performSegueWithIdentifier:@"PostToBidListSegue" sender:self];
 }
 

@@ -13,6 +13,7 @@
 		9D4318661A980B9B001E9FCA /* BiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4318651A980B9B001E9FCA /* BiddingViewController.m */; };
 		9D4318691A98141C001E9FCA /* BidListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4318681A98141C001E9FCA /* BidListViewController.m */; };
 		9D43186C1A98146A001E9FCA /* SelectBidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D43186B1A98146A001E9FCA /* SelectBidViewController.m */; };
+		9D7AF9F31A9D3BD80059020F /* CompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7AF9F21A9D3BD80059020F /* CompletionViewController.m */; };
 		9D97660D1A89D44900F9AA8A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9DA79FC51A8EBD470060E5D7 /* EmailAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA79FC41A8EBD470060E5D7 /* EmailAuthenticationViewController.m */; };
 		9DA79FD01A8ECDE00060E5D7 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA79FCF1A8ECDE00060E5D7 /* UserBase.m */; };
@@ -62,6 +63,8 @@
 		9D4318681A98141C001E9FCA /* BidListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidListViewController.m; sourceTree = "<group>"; };
 		9D43186A1A98146A001E9FCA /* SelectBidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBidViewController.h; sourceTree = "<group>"; };
 		9D43186B1A98146A001E9FCA /* SelectBidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBidViewController.m; sourceTree = "<group>"; };
+		9D7AF9F11A9D3BD80059020F /* CompletionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionViewController.h; sourceTree = "<group>"; };
+		9D7AF9F21A9D3BD80059020F /* CompletionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionViewController.m; sourceTree = "<group>"; };
 		9D97660B1A89D44900F9AA8A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		9D97660C1A89D44900F9AA8A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		9DA79FC31A8EBD470060E5D7 /* EmailAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailAuthenticationViewController.h; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				9D4318681A98141C001E9FCA /* BidListViewController.m */,
 				9D43186A1A98146A001E9FCA /* SelectBidViewController.h */,
 				9D43186B1A98146A001E9FCA /* SelectBidViewController.m */,
+				9D7AF9F11A9D3BD80059020F /* CompletionViewController.h */,
+				9D7AF9F21A9D3BD80059020F /* CompletionViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				9DBE4BFF1A81AACD00F6E110 /* AppDelegate.m in Sources */,
 				9D0E60AF1A89EEE7004807EE /* PostViewController.m in Sources */,
 				9DBE4C331A81AEC600F6E110 /* GTMOAuth2Authentication.m in Sources */,
+				9D7AF9F31A9D3BD80059020F /* CompletionViewController.m in Sources */,
 				9D43186C1A98146A001E9FCA /* SelectBidViewController.m in Sources */,
 				9DBE4BFC1A81AACD00F6E110 /* main.m in Sources */,
 				9DF1E27D1A93118D007E6AD8 /* PostList.m in Sources */,

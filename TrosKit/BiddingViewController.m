@@ -30,10 +30,10 @@ Post *selectedPost;
     NSData *encodedPostList=[defaults objectForKey:@"postlist"];
     PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
     int bn=(int)[defaults objectForKey:@"bidNumber"];
-    selectedPost=[postlist.postList objectAtIndex:bn];
+    NSLog(@"bid number: %i",bn);
+    selectedPost=[postlist.postList objectAtIndex:0];
     nameLabel.text=selectedPost.name;
     descriptionTextView.text=selectedPost.description;
-    
     
     // Do any additional setup after loading the view.
 }
@@ -68,6 +68,6 @@ Post *selectedPost;
     [defaults setObject:encodedPostList2 forKey:@"postlist"];
     [defaults synchronize];
     
-    [self performSegueWithIdentifier:@"biddingToDriveSegue" sender:self];
+    [self performSegueWithIdentifier:@"BiddingToDriveSegue" sender:self];
 }
 @end
