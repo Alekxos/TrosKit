@@ -49,6 +49,8 @@
     }
     return self;
 }
-
+-(User *)getPoster{
+    return self.poster;
+}
 
 @end

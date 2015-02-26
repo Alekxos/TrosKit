@@ -33,6 +33,7 @@ NSMutableArray *userPosts;
     NSData *encodedPostList = [defaults objectForKey:@"postlist"];
     PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
     
+    NSLog(@"current name: %@",currentUser.firstName);
     userPosts=[postlist postsForUser:currentUser];
     /*[base addUser:newUser];
     NSData *encodedUserBase2 = [NSKeyedArchiver archivedDataWithRootObject:base];

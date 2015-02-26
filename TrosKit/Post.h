@@ -28,4 +28,6 @@
 - (void)encodeWithCoder:(NSCoder *)encoder;
 - (id)initWithCoder:(NSCoder *)decoder;
 
+-(User *)getPoster;
+
 @end

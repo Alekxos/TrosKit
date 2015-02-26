@@ -80,7 +80,7 @@ Post *selectedPost;
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSLog(@"row: %ld",(long)row);
-    [defaults setObject:[NSNumber numberWithLong:0] forKey:@"bidNumber"];
+    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
     [defaults synchronize];
     [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }

@@ -29,9 +29,9 @@ Post *selectedPost;
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *encodedPostList=[defaults objectForKey:@"postlist"];
     PostList *postlist = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
-    int bn=(int)[defaults objectForKey:@"bidNumber"];
+    int bn=(int)[defaults integerForKey:@"bidNumber"];
     NSLog(@"bid number: %i",bn);
-    selectedPost=[postlist.postList objectAtIndex:0];
+    selectedPost=[postlist.postList objectAtIndex:bn];
     nameLabel.text=selectedPost.name;
     descriptionTextView.text=selectedPost.description;
     

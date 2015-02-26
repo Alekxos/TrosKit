@@ -14,17 +14,27 @@
 
 @synthesize postList;
 
+-(PostList *)init{
+    postList=[[NSMutableArray alloc]init];
+    return [super init];
+}
+
 -(void)addPost:(Post *)post{
-    if(postList==NULL){
-        postList=[[NSMutableArray alloc]init];
-    }
     [postList addObject:post];
 }
 
 -(NSMutableArray *)postsForUser:(User *)user{
     NSMutableArray *returnArray=[[NSMutableArray alloc]init];
     for(Post *p in postList){
-        if([p.poster.emailAddress isEqualToString:user.emailAddress]){
+        NSLog(@"Next post:");
+        User *u=[p getPoster];
+        if(u==NULL){
+            NSLog(@"well it's null");
+        }
+        NSLog(@"Poster name: %@",u.firstName);
+        NSLog(@"poster email address: %@",u.emailAddress);
+        NSLog(@"user email address: %@",user.emailAddress);
+        if([u.emailAddress isEqualToString:user.emailAddress]){
             [returnArray addObject:p];
         }
     }

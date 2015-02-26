@@ -34,8 +34,16 @@ NSMutableArray *allPosts;
     
     nameLabel.text=[NSString stringWithFormat:@"Welcome, %@",currentUser.firstName];
     
-    for(Post *p in allPosts){
-        NSLog(@"post name: %@",p.name);
+    NSLog(@"all post count: %ld",allPosts.count);
+    for(id i in allPosts){
+        Post *p=(Post *)i;
+        NSLog(@"?????? %@",p.description);
+        if(p==NULL){
+            
+        }
+        else{
+            
+        }
     }
     // Do any additional setup after loading the view.
 }
@@ -72,10 +80,8 @@ NSMutableArray *allPosts;
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSLog(@"row: %ld",(long)row);
-    [defaults setValue:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"bidNumber"];
     [defaults synchronize];
-    int bn=(int)[defaults valueForKey:@"bidNumber"];
-    NSLog(@"BN???? %i",bn);
     [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
 }
 

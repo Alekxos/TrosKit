@@ -39,12 +39,12 @@ NSString * redirectURI;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    if([[defaults objectForKey:@"post" ] isEqualToString:@"true"]){
+    /*if([[defaults objectForKey:@"post" ] isEqualToString:@"true"]){
         [self performSegueWithIdentifier:@"AuthToPostSegue" sender:self];
     }
     else if([[defaults objectForKey:@"drive" ] isEqualToString:@"true"]){
         [self performSegueWithIdentifier:@"AuthenticationToDriveSegue" sender:self];
-    }
+    }*/
     
     GTMOAuth2Authentication *auth;
     auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:keychainItemNameGoogle
@@ -254,7 +254,6 @@ finishedWithFacebookAuth:(GTMOAuth2Authentication *)auth
     else if([[defaults objectForKey:@"drive" ] isEqualToString:@"true"]){
         [self performSegueWithIdentifier:@"AuthenticationToDriveSegue" sender:self];
     }
-    
     
     //KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"Login" accessGroup:nil];
     /*[keychainItem setObject:@"password you are saving" forKey:kSecValueData];
