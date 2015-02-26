@@ -63,6 +63,7 @@ Post *selectedPost;
     bid.amount=[bidBox.text floatValue];
     bid.bidder=currentUser;
     [selectedPost addBid:bid];
+    NSLog(@"SPBC: %ld",selectedPost.bids.count);
     [postlist updatePost:selectedPost];
     NSData *encodedPostList2=[NSKeyedArchiver archivedDataWithRootObject:postlist];
     [defaults setObject:encodedPostList2 forKey:@"postlist"];

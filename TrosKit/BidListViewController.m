@@ -44,6 +44,7 @@ Post *selectedPost;
     latestDeliveryLabel.text=stringFromDate;
     
     descriptionTextView.text=selectedPost.description;
+    NSLog(@"selected post bid count: %ld",selectedPost.bids.count);
     
     // Do any additional setup after loading the view.
 }

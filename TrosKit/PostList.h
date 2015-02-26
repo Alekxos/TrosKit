@@ -16,6 +16,7 @@
 -(NSMutableArray *)postsForUser:(User *)user;
 -(void)addPost:(Post *)post;
 -(void)updatePost:(Post *)post;
+-(NSMutableArray *)getAllPosts;
 
 - (void)encodeWithCoder:(NSCoder *)encoder;
 - (id)initWithCoder:(NSCoder *)decoder;

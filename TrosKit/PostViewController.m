@@ -62,6 +62,15 @@ NSMutableArray *userPosts;
     
     // set the accessory view:
     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
+    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *temp=[defaults objectForKey:@"postlist"];
+    PostList *p=[NSKeyedUnarchiver unarchiveObjectWithData:temp];
+    NSMutableArray *allPosts=p.postList;
+    NSLog(@"postView allPosts: %@",allPosts);
+    for(Post *p in allPosts){
+        NSLog(@"POST desc: %@",p.description);
+    }
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView

@@ -21,8 +21,13 @@
 @synthesize bids;
 @synthesize finalPrice;
 
+-(Post *)init{
+    bids=[[NSMutableArray alloc]init];
+    return self;
+}
+
 -(void)addBid:(Bid *)bid{
-    if(![bid.bidder.emailAddress isEqualToString:poster.emailAddress]) [bids addObject:bid];
+    /*if(![bid.bidder.emailAddress isEqualToString:poster.emailAddress])*/ [bids addObject:bid];
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {

@@ -32,11 +32,15 @@
         NSData *encodedUserBase = [NSKeyedArchiver archivedDataWithRootObject:users];
         [defaults setObject:encodedUserBase forKey:@"cache"];
     }
-    //if([defaults objectForKey:@"postlist"]==NULL){
+    if([defaults objectForKey:@"postlist"]==NULL){
         PostList *postlist=[[PostList alloc]init];
         NSData *encodedPostList = [NSKeyedArchiver archivedDataWithRootObject:postlist];
         [defaults setObject:encodedPostList forKey:@"postlist"];
-    //}
+    }
+    NSData *temp=[defaults objectForKey:@"postlist"];
+    PostList *p=[NSKeyedUnarchiver unarchiveObjectWithData:temp];
+    NSMutableArray *allPosts=p.postList;
+    NSLog(@"allPosts: %@",allPosts);
     return YES;
 }
 

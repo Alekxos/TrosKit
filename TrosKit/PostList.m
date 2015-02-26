@@ -16,7 +16,7 @@
 
 -(PostList *)init{
     postList=[[NSMutableArray alloc]init];
-    return [super init];
+    return self;
 }
 
 -(void)addPost:(Post *)post{
@@ -42,11 +42,15 @@
     return returnArray;
 }
 
+-(NSMutableArray *)getAllPosts{
+    return postList;
+}
+
 -(void)updatePost:(Post *)post{
     for(int x=0;x<postList.count;x++){
         Post *p=[postList objectAtIndex:x];
         if([p.poster.emailAddress isEqualToString:post.poster.emailAddress]){
-            [postList setObject:postList atIndexedSubscript:x];
+            [postList setObject:post atIndexedSubscript:x];
         }
     }
 }

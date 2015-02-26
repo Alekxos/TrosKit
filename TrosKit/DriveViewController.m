@@ -26,25 +26,18 @@ NSMutableArray *allPosts;
     [super viewDidLoad];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *encodedObject=[defaults valueForKey:@"current user"];
-    NSData *encodedPosts=[defaults objectForKey:@"postlist"];
+    //NSData *encodedPosts=[defaults objectForKey:@"postlist"];
     
     User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    PostList *postList=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPosts];
-    allPosts=postList.postList;
+    //PostList *postList=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPosts];
+    
+    
+    NSData *temp=[defaults objectForKey:@"postlist"];
+    PostList *p=[NSKeyedUnarchiver unarchiveObjectWithData:temp];
+    allPosts=p.postList;
     
     nameLabel.text=[NSString stringWithFormat:@"Welcome, %@",currentUser.firstName];
-    
-    NSLog(@"all post count: %ld",allPosts.count);
-    for(id i in allPosts){
-        Post *p=(Post *)i;
-        NSLog(@"?????? %@",p.description);
-        if(p==NULL){
-            
-        }
-        else{
-            
-        }
-    }
+    NSLog(@"name: %@",((Post *)[allPosts objectAtIndex:0]).name);
     // Do any additional setup after loading the view.
 }
 
@@ -54,7 +47,7 @@ NSMutableArray *allPosts;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Drive Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -64,7 +57,36 @@ NSMutableArray *allPosts;
     //cell.textLabel.text=@"Title";
     //cell.detailTextLabel.text=@"details";
     cell.textLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).name;
+    
     cell.detailTextLabel.text = ((Post *)[allPosts objectAtIndex:indexPath.row]).description;
+    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *temp=[defaults objectForKey:@"postlist"];
+    PostList *p=[NSKeyedUnarchiver unarchiveObjectWithData:temp];
+
+    NSData *encodedObject=[defaults valueForKey:@"current user"];
+    User *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    NSMutableArray *allPosts=[p postsForUser:currentUser];
+    NSLog(@"in tableview allPosts: %@",allPosts);
+    for(Post *p in allPosts){
+        NSLog(@"desc: %@",p.description);
+    }
+    
+    /*static NSString *CellIdentifier = @"Cell";
+     
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     if (cell == nil) {
+     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+     }
+     // Set the data for this cell:
+     NSLog(@"Row: %li",(long)indexPath.row);
+     NSLog(@"Post at row %li: %@",(long)indexPath.row,((Post *)[userPosts objectAtIndex:indexPath.row]).name);
+     cell.textLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).name;
+     cell.detailTextLabel.text = ((Post *)[userPosts objectAtIndex:indexPath.row]).description;
+     
+     // set the accessory view:
+     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
+     return cell;*/
     
     // set the accessory view:
     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;

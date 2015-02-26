@@ -92,7 +92,7 @@ NSString * redirectURI;
                                                              clientSecret:GoogleClientSecret
                                                          keychainItemName:keychainItemNameGoogle
                                                                  delegate:self
-                                                         finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+                                                         finishedSelector:@selector(viewController:finishedWithGoogleAuth:error:)];
     
     [[self navigationController] pushViewController:viewController
                                            animated:YES];
@@ -197,7 +197,7 @@ finishedWithFacebookAuth:(GTMOAuth2Authentication *)auth
 }
 
 - (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
-      finishedWithAuth:(GTMOAuth2Authentication *)auth
+      finishedWithGoogleAuth:(GTMOAuth2Authentication *)auth
                  error:(NSError *)error {
     [self.navigationController popToViewController:self animated:NO];
     NSString *urlString = urlEndpoint;

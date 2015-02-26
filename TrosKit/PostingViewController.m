@@ -62,6 +62,7 @@
     NSData *encoded=[NSKeyedArchiver archivedDataWithRootObject:postlist];
     [defaults setObject:encoded forKey:@"postlist"];
     [defaults synchronize];
+    
     [self performSegueWithIdentifier:@"PostingToPostSegue" sender:self];
 }
 @end
