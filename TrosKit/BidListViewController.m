@@ -91,7 +91,7 @@ Post *selectedPost;
     NSLog(@"row: %ld",(long)row);
     [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
     [defaults synchronize];
-    [self performSegueWithIdentifier:@"BidListToPostSegue" sender:self];
+    [self performSegueWithIdentifier:@"BidListToSelectBidSegue" sender:self];
 }
 
 /*
