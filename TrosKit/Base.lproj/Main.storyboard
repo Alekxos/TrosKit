@@ -268,10 +268,10 @@
             </objects>
             <point key="canvasLocation" x="1767" y="-1310"/>
         </scene>
-        <!--View Controller-->
+        <!--Completion View Controller-->
         <scene sceneID="ia1-2x-3dV">
             <objects>
-                <viewController id="Sj9-zk-YOl" sceneMemberID="viewController">
+                <viewController id="Sj9-zk-YOl" customClass="CompletionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N5k-NZ-KC0"/>
                         <viewControllerLayoutGuide type="bottom" id="zl7-9X-6hn"/>
@@ -334,12 +334,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-eX-RLx">
-                                <rect key="frame" x="356" y="141" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-0q-bjG">
                                 <rect key="frame" x="356" y="170" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
@@ -352,10 +346,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-eX-RLx">
+                                <rect key="frame" x="356" y="141" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ELW-0q-bjG" id="CRS-Sj-QmO"/>
+                        <outlet property="endAddressLabel" destination="Pn4-eX-RLx" id="OrK-6D-IoQ"/>
+                        <outlet property="priceLabel" destination="ze5-KB-oGl" id="BBs-HN-0jm"/>
+                        <outlet property="shipmentNameLabel" destination="Qdi-SC-PJB" id="84l-lU-R4Z"/>
+                        <outlet property="startAddressLabel" destination="iGF-qv-JlI" id="5Eg-ch-j1F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lin-Ri-kD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1208,6 +1215,6 @@
         <segue reference="rgU-cX-HRF"/>
         <segue reference="J6v-Be-yXO"/>
         <segue reference="rM7-Bp-Lrn"/>
-        <segue reference="3JP-rL-ndd"/>
+        <segue reference="fBX-kn-MgR"/>
     </inferredMetricsTieBreakers>
 </document>
