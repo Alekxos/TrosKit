@@ -89,7 +89,7 @@ Post *selectedPost;
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSLog(@"row: %ld",(long)row);
-    [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
+    [defaults setFloat:((Bid *)[selectedPost.bids objectAtIndex:indexPath.row]).amount forKey:@"bidAmount"];
     [defaults synchronize];
     [self performSegueWithIdentifier:@"BidListToPostSegue" sender:self];
 }
