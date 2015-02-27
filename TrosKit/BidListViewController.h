@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BidListViewController : UIViewController <UITableViewDataSource,UITabBarDelegate>
+@interface BidListViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *bidListTableView;
 @property (strong, nonatomic) IBOutlet UILabel *selectedShipmentName;
 @property (strong, nonatomic) IBOutlet UILabel *startAddressLabel;

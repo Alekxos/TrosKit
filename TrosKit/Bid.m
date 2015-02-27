@@ -16,12 +16,14 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     //Encode properties, other class variables, etc
     [encoder encodeObject:self.bidder forKey:@"bidder"];
+    [encoder encodeFloat:self.amount forKey:@"amount"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
         //decode properties, other class vars
         self.bidder = [decoder decodeObjectForKey:@"bidder"];
+        self.amount=[decoder decodeFloatForKey:@"amount"];
     }
     return self;
 }

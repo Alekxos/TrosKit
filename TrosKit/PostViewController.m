@@ -82,6 +82,7 @@ NSMutableArray *userPosts;
     NSInteger row = [indexPath row];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     Post *selected=[userPosts objectAtIndex:row];
+    NSLog(@"NOW NOW NOW %f",((Bid *)[selected.bids objectAtIndex:0]).amount);
     [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:selected] forKey:@"selectedPost"];
     [defaults synchronize];
     [self performSegueWithIdentifier:@"PostToBidListSegue" sender:self];

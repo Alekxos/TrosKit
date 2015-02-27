@@ -35,7 +35,7 @@
 */
 
 - (IBAction)confirm:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"BidListToPostSegue" sender:self];
+    [self performSegueWithIdentifier:@"SelectBidToCompletionSegue" sender:self];
 }
 
 @end

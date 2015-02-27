@@ -16,6 +16,7 @@
 
 @implementation BidListViewController
 
+@synthesize bidListTableView;
 @synthesize selectedShipmentName;
 @synthesize startAddressLabel;
 @synthesize endAddressLabel;
@@ -31,6 +32,7 @@ Post *selectedPost;
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *encodedPost=[defaults objectForKey:@"selectedPost"];
     selectedPost=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPost];
+    NSLog(@"selected post bid count: %ld",selectedPost.bids.count);
     selectedShipmentName.text=selectedPost.name;
     startAddressLabel.text=selectedPost.startAddress;
     endAddressLabel.text=selectedPost.endAddress;
@@ -45,7 +47,10 @@ Post *selectedPost;
     
     descriptionTextView.text=selectedPost.description;
     NSLog(@"selected post bid count: %ld",selectedPost.bids.count);
-    
+    Bid *b=[selectedPost.bids objectAtIndex:0];
+    NSLog(@"THE ANSWER: %f",b.amount);
+    NSLog(@"first bid: %@",[NSString stringWithFormat:@"%f",((Bid *)[selectedPost.bids objectAtIndex:0]).amount]);
+    [self.bidListTableView reloadData];
     // Do any additional setup after loading the view.
 }
 
@@ -56,16 +61,19 @@ Post *selectedPost;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Bid List Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     // Set the data for this cell:
     bids=selectedPost.bids;
-    cell.textLabel.text = [NSString stringWithFormat:@"%f",((Bid *)[bids objectAtIndex:indexPath.row]).amount];
-    cell.detailTextLabel.text = ((Bid *)[bids objectAtIndex:indexPath.row]).bidder.firstName;
+    Bid *b=[selectedPost.bids objectAtIndex:indexPath.row];
+    NSLog(@"THE TRUTH: %f for %ld",b.amount,indexPath.row);
+    //NSLog(@"NOW NOW NOW %f",((Bid *)[selected.bids objectAtIndex:0]).amount);
+    cell.textLabel.text =[NSString stringWithFormat:@"%f",((Bid *)[selectedPost.bids objectAtIndex:indexPath.row]).amount];
+    /*cell.detailTextLabel.text = */NSLog(@"%@",((Bid *)[selectedPost.bids objectAtIndex:indexPath.row]).bidder.firstName);
     
     // set the accessory view:
     //cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
@@ -73,7 +81,7 @@ Post *selectedPost;
 }
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
-    return bids.count;
+    return [selectedPost.bids count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +91,7 @@ Post *selectedPost;
     NSLog(@"row: %ld",(long)row);
     [defaults setObject:[NSNumber numberWithLong:row] forKey:@"bidNumber"];
     [defaults synchronize];
-    [self performSegueWithIdentifier:@"DriveToBiddingSegue" sender:self];
+    [self performSegueWithIdentifier:@"BidListToPostSegue" sender:self];
 }
 
 /*

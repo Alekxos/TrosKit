@@ -61,9 +61,12 @@ Post *selectedPost;
     User *currentUser=[NSKeyedUnarchiver unarchiveObjectWithData:encodedUser];
     PostList *postlist=[NSKeyedUnarchiver unarchiveObjectWithData:encodedPostList];
     bid.amount=[bidBox.text floatValue];
+    NSLog(@"here %f",bid.amount);
     bid.bidder=currentUser;
+    
     [selectedPost addBid:bid];
-    NSLog(@"SPBC: %ld",selectedPost.bids.count);
+    //Bid *test=[selectedPost.bids objectAtIndex:0];
+    NSLog(@"HDLSFSDF %f",((Bid *)[selectedPost.bids objectAtIndex:0]).amount);
     [postlist updatePost:selectedPost];
     NSData *encodedPostList2=[NSKeyedArchiver archivedDataWithRootObject:postlist];
     [defaults setObject:encodedPostList2 forKey:@"postlist"];
