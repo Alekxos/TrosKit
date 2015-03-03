@@ -80,6 +80,9 @@ NSString * redirectURI;
 }
 
 - (IBAction)googleAuthentication:(UIButton *)sender {
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    User *current=[defaults objectForKey:@"current user"];
+    if(current==NULL){
     urlEndpoint=@"https://www.googleapis.com/oauth2/v2/userinfo";
     
     tokenURL=[NSURL URLWithString:GoogleTokenURL];
@@ -97,6 +100,15 @@ NSString * redirectURI;
     [[self navigationController] pushViewController:viewController
                                            animated:YES];
     //Launch Google authentication screen
+    }
+    else{
+        if([[defaults objectForKey:@"post" ] isEqualToString:@"true"]){
+            [self performSegueWithIdentifier:@"AuthToPostSegue" sender:self];
+        }
+        else if([[defaults objectForKey:@"drive" ] isEqualToString:@"true"]){
+            [self performSegueWithIdentifier:@"AuthenticationToDriveSegue" sender:self];
+        }
+    }
 }
 - (void)awakeFromNib {
     // Get the saved authentication, if any, from the keychain.

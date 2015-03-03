@@ -11,5 +11,6 @@
 @interface PostViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UITableView *postTableView;
+- (IBAction)signOut:(UIBarButtonItem *)sender;
 
 @end

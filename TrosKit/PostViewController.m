@@ -98,4 +98,16 @@ NSMutableArray *userPosts;
 }
 */
 
+- (IBAction)signOut:(UIBarButtonItem *)sender {
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults setObject:NULL forKey:@"current user"];
+    [defaults synchronize];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    // pop back to previous controller
+    NSArray *myControllers = self.navigationController.viewControllers;
+    int previous = myControllers.count - 2;
+    UIViewController *previousController = [myControllers objectAtIndex:previous];
+    
+    [self.navigationController popToViewController:previousController animated:YES];
+}
 @end
